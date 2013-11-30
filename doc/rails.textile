@@ -49,7 +49,7 @@ config.after_initialize do
 end
 </pre>
 
-There's generally no need to collect metric and experiment data outside production environment.  Under Rails, Vanity turns collection on only if the environment name is "production". You can control this from @config/environments@ by setting @Vanity.playground.collecting@ to true/false. When collection is off, Vanity doesn't connect to the database server, so there's no need to set a database configuration for these environments.
+When collection is off, Vanity doesn't connect to the database server, so there's no need to set a database configuration for these environments.
 
 
 h3(#dashboard).  Dashboard
@@ -64,7 +64,7 @@ Create a new controller for Vanity:
 
 <pre>
 class VanityController < ApplicationController
-include Vanity::Rails::Dashboard
+  include Vanity::Rails::Dashboard
 end
 </pre>
 
